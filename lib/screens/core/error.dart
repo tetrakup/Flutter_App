@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vizeproje/screens/core/loader.dart';
 
 class ErrorScreen extends StatefulWidget {
   const ErrorScreen({super.key});

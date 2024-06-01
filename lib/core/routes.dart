@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:vizeproje/screens/book_api_screen.dart';
 import 'package:vizeproje/screens/client/profile.dart';
 import 'package:vizeproje/screens/core/loader.dart';
 import 'package:vizeproje/screens/onboarding_screen.dart';
@@ -75,8 +76,13 @@ final routes = GoRouter(
     ),
     GoRoute(
       path: '/about',
-      builder: (context, state) => const about(),
+      builder: (context, state) => const AboutScreen(),
 
+    ),
+
+     GoRoute(
+      path: '/bookapi',
+      builder: (context, state) => const BookApiScreen(),
     ),
     // GoRoute(
     //   path: '/deneme',

@@ -1,0 +1,18 @@
+{
+    "title": "Hakkımızda",
+    "whoWeAre": {
+      "title": "Biz Kimiz?",
+      "description": "Siz değerli müşterilerimizle birlikte büyüyor ve gelişiyoruz."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "description": "Kaliteli ürünleri uygun fiyatlarla sunmak ve müşterilerimizin beklentilerini aşmak."
+    },
+    "contact": {
+      "title": "İletişim",
+      "address": "Türkiye",
+      "email": "shoppingapp@gmail.com",
+      "phone": "123 456 7890"
+    }
+  }
+  
