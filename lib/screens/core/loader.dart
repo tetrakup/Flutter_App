@@ -1,4 +1,4 @@
-import 'dart:io';
+/*import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -83,3 +83,74 @@ class _LoaderScreenState extends State<LoaderScreen> {
     );
   }
 }
+*/
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../core/storage.dart';
+
+class LoaderScreen extends StatefulWidget {
+  const LoaderScreen({super.key});
+
+  @override
+  State<LoaderScreen> createState() => _LoaderScreenState();
+}
+
+class _LoaderScreenState extends State<LoaderScreen> {
+  @override
+  void initState() {
+    super.initState();
+    loadApp();
+  }
+
+  Future<void> loadApp() async {
+    final storage = Storage();
+    // await storage.clearStorage(); // Test için kullanabilirsiniz
+    final firstLaunch = await storage.isFirstLaunch();
+
+    if (firstLaunch) {
+      // Cihazın gece/gündüz moduna ve varsayılan diline erişmek
+      final darkMode = ThemeMode.system == ThemeMode.dark;
+      final language = getDeviceLanguage();
+
+      // İlk yapılandırmayı kaydet
+      await storage.setConfig(language: language, darkMode: darkMode);
+
+      // Onboarding ekranına yönlendir
+      GoRouter.of(context).replace("/onboarding");
+    } else {
+      // Giriş ekranına yönlendir
+      GoRouter.of(context).replace("/giris");
+    }
+  }
+
+  String getDeviceLanguage() {
+    final String defaultLocale;
+    if (!kIsWeb) {
+      defaultLocale = Platform.localeName;
+    } else {
+      defaultLocale = "en";
+    }
+    final langParts = defaultLocale.split("_");
+    final supportedLanguages = ["en", "tr", "fr", "es"];
+
+    if (supportedLanguages.contains(langParts[0])) {
+      return langParts[0];
+    } else {
+      return "en";
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+}
+ 
