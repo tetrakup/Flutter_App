@@ -150,6 +150,13 @@ class _HomePageState extends State<homepage> {
                       ),
                       onTap: () => context.push("/bookapi")),
                   Gap(5),
+                  MenuItem(
+                      title: "Bloosom Ai",
+                      icon: SvgPicture.asset(
+                        "assets/icons/about.svg",
+                        height: 23,
+                      ),
+                      onTap: () => context.push("/bloosom")),
                   
                 ],
               ),
