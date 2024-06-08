@@ -122,4 +122,23 @@ class API {
       return null;
     }
   }
+
+  Future<User?> yeniApiLogin(String email, String password) async {
+    try {
+      Response response = await dio.post(
+        'https://jsonformatter.org/5663da',
+        data: {'email': email, 'password': password},
+        options: Options(headers: {'Content-Type': 'application/json'}),
+      );
+
+      if (response.statusCode == 200) {
+        return User.fromJson(response.data['data'].firstWhere((user) => user['email'] == email && user['password'] == password));
+      } else {
+        return null;
+      }
+    } catch (e) {
+      print('Yeni API Login error: $e');
+      return null;
+    }
+  }
 }

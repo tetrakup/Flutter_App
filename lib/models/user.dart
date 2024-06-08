@@ -11,32 +11,33 @@ class User {
   String? website;
   String? image;
 
-  User(
-      {this.id,
-      this.uuid,
-      this.firstname,
-      this.lastname,
-      this.username,
-      this.password,
-      this.email,
-      this.ip,
-      this.macAddress,
-      this.website,
-      this.image});
+  User({
+    this.id,
+    this.uuid,
+    this.firstname,
+    this.lastname,
+    this.username,
+    this.password,
+    this.email,
+    this.ip,
+    this.macAddress,
+    this.website,
+    this.image,
+  });
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: json['id'],
-      uuid: json['uuid'],
-      firstname: json['firstname'],
-      lastname: json['lastname'],
-      username: json['username'],
-      password: json['password'],
-      email: json['email'],
-      ip: json['ip'],
-      macAddress: json['macAddress'],
-      website: json['website'],
-      image: json['image'],
+      id: json['id'] as int?,
+      uuid: json['uuid'] as String?,
+      firstname: json['firstname'] as String?,
+      lastname: json['lastname'] as String?,
+      username: json['username'] as String?,
+      password: json['password'] as String?,
+      email: json['email'] as String?,
+      ip: json['ip'] as String?,
+      macAddress: json['macAddress'] as String?,
+      website: json['website'] as String?,
+      image: json['image'] as String?,
     );
   }
 

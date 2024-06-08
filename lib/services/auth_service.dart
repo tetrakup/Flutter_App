@@ -11,4 +11,8 @@ class AuthService {
   Future<User?> login(String email, String password) async {
     return await _api.login(email, password);
   }
+
+  Future<User?> yeniApiLogin(String email, String password) async {
+    return await _api.yeniApiLogin(email, password);
+  }
 }

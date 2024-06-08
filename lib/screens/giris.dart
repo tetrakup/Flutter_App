@@ -79,7 +79,7 @@ class _girisState extends State<giris> {
   void _login() {
     if (_formKey.currentState?.validate() ?? false) {
       _formKey.currentState?.save();
-      _authService.login(_email!, _password!).then((user) {
+      _authService.yeniApiLogin(_email!, _password!).then((user) {
         if (user != null) {
           GoRouter.of(context).replace('/homepage');
         } else {
