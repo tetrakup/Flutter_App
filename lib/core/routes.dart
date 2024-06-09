@@ -94,7 +94,6 @@ final routes = GoRouter(
 */
 
 import 'package:go_router/go_router.dart';
-import 'package:vizeproje/screens/bloosom.dart';
 import 'package:vizeproje/screens/book_api_screen.dart';
 import 'package:vizeproje/screens/client/profile.dart';
 import 'package:vizeproje/screens/core/loader.dart';
@@ -107,7 +106,6 @@ import '../screens/giris.dart';
 import '../screens/homepage.dart';
 import '../screens/core/settings.dart';
 import '../screens/payment/payment.dart';
-import '../screens/product/ProductDetails.dart';
 import '../screens/product/cart.dart';
 import '../screens/product/favorites.dart';
 import '../screens/product/products.dart';
@@ -171,10 +169,6 @@ final routes = GoRouter(
     GoRoute(
       path: '/onboarding',
       builder: (context, state) => const OnboardingScreen(),
-    ),
-    GoRoute(
-      path: "/bloosom",
-      builder: (context, state) =>  WebViewPage(),
     ),
   ],
 );
