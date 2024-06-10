@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vizeproje/services/auth_service.dart';
-import 'package:vizeproje/models/user.dart';
 
 class giris extends StatefulWidget {
   const giris({Key? key}) : super(key: key);
